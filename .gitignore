@@ -1,2 +1,4 @@
-mynote/.obsidian/
-.obsidian/
+.obsidian/*
+!.obsidian/snippets/
+!.obsidian/snippets/**
+

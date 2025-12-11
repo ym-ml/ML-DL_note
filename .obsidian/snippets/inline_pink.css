@@ -1,0 +1,7 @@
+.cm-inline-code {
+    color: #e06c75 !important;  /* color of str */
+    background-color: #e2e4e7 !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
