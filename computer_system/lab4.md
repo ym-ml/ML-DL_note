@@ -120,3 +120,6 @@ Disassembly of section .text:
 
  804916b:	88 4c 1d e9          	mov    %cl,-0x17(%ebp,%ebx,1)
  804916f:	83 c0 01             	add    $0x1,%eax
+
+
+objdump -dr ...  可以显示重定位信息
