@@ -1,4 +1,7 @@
 .obsidian/*
 !.obsidian/snippets/
 !.obsidian/snippets/**
+
 .trash/
+
+Excalidraw/draft
