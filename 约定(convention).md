@@ -15,5 +15,5 @@
 Todo: 等待去尝试的一些想法
 Failure:没有弄明白
 Tldr:总述
-tip:(机器学习里的)求解方式
+note:一些我的解释
 attention:注意
