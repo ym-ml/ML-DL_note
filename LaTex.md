@@ -1,8 +1,13 @@
+
 多行连等:
 \begin{aligned} 
 P(x_5) 
-&= \sum_{x_4} \sum_{x_3} \sum_{x_2} \sum_{x_1} P(x_1, x_2, x_3, x_4, x_5)\\
+&= \sum_{x_4} \sum_{x_3} \sum_{x_2} \sum_{x_1} P(x_1, x_2, x_3, x_4, x_5) \\
 &= \sum_{x_4} \sum_{x_3} \sum_{x_2} \sum_{x_1} P(x_1) P(x_2 | x_1) P(x_3 | x_2) P(x_4 | x_3) P(x_5 | x_3)
 \end{aligned}
 
-\tag{1}
+&用于对齐,`\\`用来换行
+
+
+加上公式结尾加上序号 \tag{1}
+
