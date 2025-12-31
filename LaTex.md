@@ -8,6 +8,13 @@ P(x_5)
 
 &用于对齐,`\\`用来换行
 
+可以带上大括号,用\begin{cases} ,\end{cases}
+\begin{cases} 
+V_T(x) = \max_{a \in A} \sum_{x' \in X} P^a_{x \to x'} \left( \frac{1}{T} R^a_{x \to x'} + \frac{T-1}{T} V_{T-1}(x') \right); \\ 
+V_\gamma(x) = \max_{a \in A} \sum_{x' \in X} P^a_{x \to x'} \left( R^a_{x \to x'} + \gamma V_\gamma(x') \right). 
+\end{cases}
+\tag{16.18}
+
 
 加上公式结尾加上序号 \tag{1}
 
