@@ -12,13 +12,16 @@ P(x_5)
 加上公式结尾加上序号 \tag{1}
 
 映射: \mapsto 
-$\mathbb R$:\mathbb 
+$\mathbb R$:\mathbb R
 
 $\mathbf x$: \mathbf x
 $\boldsymbol x$ :\boldsymbol x
 $\mathcal X$: \mathcal X      $\mathcal L$:\mathcal L
 
-
+加减乘除 \times $\times$       \div $\div$
 
 逻辑
 $\land$  $\lnot$  $\lor$    \land   lnot  lor
+
+
+`\; \; `可以实现空格 $x \, y \; z$ 
