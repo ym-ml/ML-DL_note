@@ -1,3 +1,4 @@
+
 ## phase3.o:     
 file format elf32-i386
 
@@ -123,3 +124,34 @@ Disassembly of section .text:
 
 
 objdump -dr ...  可以显示重定位信息
+
+## phase2.o
+0804905b  < PRvMUdVD >:
+ 804905b:	55                   	push   %ebp
+ 804905c:	89 e5                	mov    %esp,%ebp
+ 804905e:	83 ec 08             	sub    $0x8,%esp
+ 8049061:	83 ec 0c             	sub    $0xc,%esp
+ 8049064:	ff 75 08             	==pushl  0x8(%ebp)==
+ 8049067:	e8 04 f6 ff ff       	call   8048670 <puts@plt>
+ 804906c:	83 c4 10             	add    $0x10,%esp
+ 804906f:	83 ec 08             	sub    $0x8,%esp
+ 8049072:	ff 75 08             	pushl  0x8(%ebp)
+ 8049075:	68 c0 b0 04 08       	push   $0x804b0c0
+ 804907a:	e8 d1 f5 ff ff       	call   8048650 <strcpy@plt>
+ 804907f:	83 c4 10             	add    $0x10,%esp
+ 8049082:	90                   	nop
+ 8049083:	c9                   	leave  
+ 8049084:	c3                   	ret    
+
+
+08049085 <do_phase>:
+ 8049085:	55                   	push   %ebp
+ 8049086:	89 e5                	mov    %esp,%ebp
+ 8049088:	83 ec 1c             	sub    $0x1c,%esp
+ 804908b:	68 00 00 36 33       	push   $0x33360000
+ 8049090:	68 34 32 30 33       	push   $0x33303234
+ 8049095:	68 35 32 30 32       	push   $0x32303235 *注意方向,不过多试几次就行*
+ 804909a:	54                   	==push   %esp==           
+ **这里push %esp之后< PRvMUdVD >中pushl  0x8(%ebp)传给puts的才是正确的地址**
+ 804909b:	e8 bb ff ff ff       	call   804905b < PRvMUdVD >
+ ......
