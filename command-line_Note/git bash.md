@@ -1,5 +1,12 @@
 # 1.初始化
-流程
+## 安装
+- windows下载，或者linux `sudo apt install git` 
+- git config --global user.name "..."
+- git config --global user.email "..."
+- git config --list 检查配置
+- ssh-keygen -t `ed25519` -C "email@email"  git生成ssh密钥对,可以选择保存的路径(默认为~/.ssh/id_ed25519)和密码
+
+## 仓库
 	git init
 	touch .gitignore    creat .gitignore,then can use 'code' to open
 	touch README.md<br>
