@@ -677,3 +677,323 @@ Sequential(
         num_epochs:30 batch_size:256 lr:0.1
 train_loss:0.266784 train_acc:0.901900 test_acc: 0.860000
 
+#------想看到过拟合
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.267827 train_acc:0.902033 test_acc: 0.866200
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.177147 train_acc:0.935017 test_acc: 0.862100
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.146897 train_acc:0.946450 test_acc: 0.870300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.067676 train_acc:0.975750 test_acc: 0.879000
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.057833 train_acc:0.980367 test_acc: 0.891600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.033713 train_acc:0.988950 test_acc: 0.890100
+
+# 中间有一段log丢失了,大概训练了快200轮,不过test_acc还没有看到较显著的下降
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.038570 train_acc:0.987450 test_acc: 0.884800
+
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.291428 train_acc:0.892533 test_acc: 0.867400
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:20 batch_size:256 lr:0.1
+train_loss:0.042803 train_acc:0.985650 test_acc: 0.886800
+
+#我这里每一轮训练集和测试集在变化,也许是这个原因? 重来
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.268114 train_acc:0.901017 test_acc: 0.881800
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.185272 train_acc:0.932533 test_acc: 0.879100
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.221080 train_acc:0.936550 test_acc: 0.872400
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.094671 train_acc:0.965200 test_acc: 0.881900
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.109901 train_acc:0.959850 test_acc: 0.880900
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.064869 train_acc:0.976750 test_acc: 0.886600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.040661 train_acc:0.986683 test_acc: 0.884300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.059099 train_acc:0.980167 test_acc: 0.888200
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.048213 train_acc:0.984100 test_acc: 0.872000
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.018075 train_acc:0.995083 test_acc: 0.887300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.017456 train_acc:0.995017 test_acc: 0.874600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.077751 train_acc:0.970850 test_acc: 0.880200
+
+#训练了360轮,未见过拟合.随训练轮数的增多,test_acc的曲线逐渐变平滑,基本没有突增突减.(除了刚才大概第349轮)
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.027295 train_acc:0.992133 test_acc: 0.882600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.013402 train_acc:0.996650 test_acc: 0.876700
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.028402 train_acc:0.991017 test_acc: 0.881600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.003266 train_acc:0.999717 test_acc: 0.891000
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.042000 train_acc:0.985133 test_acc: 0.885800
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.002870 train_acc:0.999917 test_acc: 0.891200
+
+#训练了540轮,仍未见过拟合.此时train_acc已经极接近1,train_loss极接近0,应该是已经无法训练了,只有有loss才能优化
+#这也可以解释为什么训练轮数多了曲线变得平滑.  因为后面loss很小,所以每一轮训练后参数的变化也小,所以曲线平滑
+
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.268981 train_acc:0.901483 test_acc: 0.853600
+
