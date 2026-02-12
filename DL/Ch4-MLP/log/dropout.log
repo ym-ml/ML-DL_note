@@ -1,0 +1,52 @@
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+        num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.329500 train_acc:0.876950 test_acc: 0.862000
+
+四组来对比,前两个使用了标准暂退法,后两个没有使用.
+可以看到前两组train_acc在0.875左右,后两组则在0.89左右. **前两组train_acc更接近test_acc**
+----
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.334511 train_acc:0.875917 test_acc: 0.869200
+
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.343014 train_acc:0.874483 test_acc: 0.859600
+过拟合解决的很好
+
+----
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.283870 train_acc:0.892783 test_acc: 0.867500
+
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.291635 train_acc:0.891500 test_acc: 0.850000
+
+这两个是没有用dropout的
+----

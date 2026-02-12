@@ -1,0 +1,49 @@
+dropout1, dropout2 = 0.05, 0.05
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.305484 train_acc:0.885200 test_acc: 0.859500
+
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.672164 train_acc:0.744283 test_acc: 0.783800
+
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.320445 train_acc:0.878667 test_acc: 0.836100
+
+----
+dropout1, dropout2 = 0.03, 0.05:
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.291135 train_acc:0.890367 test_acc: 0.864900
+
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.296014 train_acc:0.886800 test_acc: 0.863100
+
+所以似乎并没有显著作用

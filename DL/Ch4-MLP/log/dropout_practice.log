@@ -1,0 +1,68 @@
+dropout1: 0.3  dropout2: 0.5
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.367196 train_acc:0.865450 test_acc: 0.847100
+
+dropout1: 0.3  dropout2: 0.5
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.363722 train_acc:0.867833 test_acc: 0.865700
+
+dropout1: 0.3  dropout2: 0.5
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.361253 train_acc:0.866800 test_acc: 0.862200
+
+dropout1: 0.5  dropout2: 0.3
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.387577 train_acc:0.857500 test_acc: 0.863400
+
+dropout1: 0.5  dropout2: 0.3
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.384477 train_acc:0.859167 test_acc: 0.841000
+
+dropout1: 0.5  dropout2: 0.3
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.382915 train_acc:0.858683 test_acc: 0.869300
+
+dropout1: 0.2  dropout2: 0.6
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.350360 train_acc:0.872433 test_acc: 0.858200
+
+dropout1: 0.1  dropout2: 0.7
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.357849 train_acc:0.870867 test_acc: 0.869900
+
+dropout1: 0.3  dropout2: 0.5
+            num_epochs:20 batch_size:256 lr:0.5
+train_loss:0.304218 train_acc:0.888500 test_acc: 0.879900
+
+dropout1: 0.0  dropout2: 0.0
+            num_epochs:20 batch_size:256 lr:0.5
+train_loss:0.245735 train_acc:0.906683 test_acc: 0.864600
+
+dropout1: 0.3  dropout2: 0.5
+            num_epochs:30 batch_size:256 lr:0.5
+train_loss:0.271211 train_acc:0.897367 test_acc: 0.872600
+
+dropout1: 0.0  dropout2: 0.0
+            num_epochs:30 batch_size:256 lr:0.5
+train_loss:1.048297 train_acc:0.626700 test_acc: 0.399800   异常
+
+
+dropout1: 0.0  dropout2: 0.0
+            num_epochs:30 batch_size:256 lr:0.5
+train_loss:1.799024 train_acc:0.228783 test_acc: 0.222300  仍出现异常,loss突然暴增
+
+可能是内置的dropout对0.0的概率处理问题?
+
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:30 batch_size:256 lr:0.5
+train_loss:0.373252 train_acc:0.865150 test_acc: 0.840000
+仍然有异常,但是,最后下来了一些
+
