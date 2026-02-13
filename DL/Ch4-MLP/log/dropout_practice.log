@@ -49,9 +49,9 @@ train_loss:1.048297 train_acc:0.626700 test_acc: 0.399800   异常
 
 dropout1: 0.0  dropout2: 0.0
             num_epochs:30 batch_size:256 lr:0.5
-train_loss:1.799024 train_acc:0.228783 test_acc: 0.222300  仍出现异常,loss突然暴增
+train_loss:1.799024 train_acc:0.228783 test_acc: 0.222300   仍出现异常,loss突然暴增
 
-可能是内置的dropout对0.0的概率处理问题?
+~~可能是内置的dropout对0.0的概率处理问题?~~
 
 
 Sequential(
@@ -65,4 +65,190 @@ Sequential(
 num_epochs:30 batch_size:256 lr:0.5
 train_loss:0.373252 train_acc:0.865150 test_acc: 0.840000
 仍然有异常,但是,最后下来了一些
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+            num_epochs:30 batch_size:256 lr:0.5
+train_loss:0.265551 train_acc:0.900350 test_acc: 0.867100
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+            num_epochs:30 batch_size:256 lr:0.5
+train_loss:289.684035 train_acc:0.394617 test_acc: 0.520900
+
+*通过与前文中MLP的实现对比,异常是由于学习率过高的问题(0.5--->0.1)
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.306656 train_acc:0.889617 test_acc: 0.866300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:30 batch_size:256 lr:0.1
+train_loss:0.265562 train_acc:0.902550 test_acc: 0.877500
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.263151 train_acc:0.900850 test_acc: 0.876200
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.286672 train_acc:0.892700 test_acc: 0.866800
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:30 batch_size:256 lr:0.2
+train_loss:0.275663 train_acc:0.898400 test_acc: 0.879100
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:30 batch_size:256 lr:0.2
+train_loss:0.218722 train_acc:0.917667 test_acc: 0.884900
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:50 batch_size:256 lr:0.2
+train_loss:0.229644 train_acc:0.914100 test_acc: 0.889300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.2
+train_loss:0.377664 train_acc:0.863167 test_acc: 0.860900
+final std_all:[0.022194912657141685, 0.08375521004199982, 0.02687760442495346, 0.08507272601127625, 0.13950322568416595, 0.6244946718215942]
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.2
+train_loss:0.377780 train_acc:0.863717 test_acc: 0.818400
+final std_all:[0.02207038924098015, 0.08595830202102661, 0.027203168720006943, 0.08932407200336456, 0.14010000228881836, 0.572808027267456]
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.2
+train_loss:0.377736 train_acc:0.863717 test_acc: 0.859400
+final std_all:[0.02211911976337433, 0.09022153913974762, 0.02711775153875351, 0.08372043818235397, 0.14005723595619202, 0.5706053376197815]
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:20 batch_size:256 lr:0.2
+train_loss:0.312510 train_acc:0.886600 test_acc: 0.872200
+final std_all:[0.02829243801534176, 0.11742494255304337, 0.032466866075992584, 0.08028915524482727, 0.1636018306016922, 0.5241533517837524]
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:20 batch_size:256 lr:0.2
+train_loss:0.262539 train_acc:0.901833 test_acc: 0.780000
+final std_all:[0.027909377589821815, 0.10673880577087402, 0.03041786327958107, 0.08549763262271881, 0.15408943593502045, 0.5123271942138672]
 

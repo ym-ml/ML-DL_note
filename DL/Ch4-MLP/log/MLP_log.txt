@@ -997,3 +997,25 @@ Sequential(
         num_epochs:30 batch_size:256 lr:0.1
 train_loss:0.268981 train_acc:0.901483 test_acc: 0.853600
 
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.5
+train_loss:0.317500 train_acc:0.882117 test_acc: 0.858600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=64, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=64, out_features=10, bias=True)
+)
+        num_epochs:30 batch_size:256 lr:0.5
+train_loss:0.468500 train_acc:0.829000 test_acc: 0.827000
+学习率过高(0.5)就会出现这样的异常!

@@ -50,3 +50,12 @@ train_loss:0.291635 train_acc:0.891500 test_acc: 0.850000
 
 这两个是没有用dropout的
 ----
+Net(
+  (lin1): Linear(in_features=784, out_features=256, bias=True)
+  (lin2): Linear(in_features=256, out_features=256, bias=True)
+  (lin3): Linear(in_features=256, out_features=10, bias=True)
+  (relu): ReLU()
+)
+            num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.336523 train_acc:0.876033 test_acc: 0.858500
+
