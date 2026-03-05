@@ -1,0 +1,122 @@
+方差为0.01:
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.316494 train_acc:0.882650 test_acc: 0.857600
+
+train_acc-test_acc:0.025050
+
+=====
+方差为1:
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:2.302955 train_acc:0.099600 test_acc: 0.100000
+
+train_acc-test_acc:-0.000400
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:nan train_acc:0.100000 test_acc: 0.100000
+
+train_acc-test_acc:0.000000
+
+========
+使用Xavier:
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.333330 train_acc:0.875783 test_acc: 0.853700
+
+train_acc-test_acc:0.022083
+
+========
+所有weight都初始化为0.001,但是bias忘了,初始化不同. 可以看到还是训练出来了的
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.352093 train_acc:0.869917 test_acc: 0.840500
+
+train_acc-test_acc:0.029417
+
+----
+weight初始为0.001,bias初始为1,模型无法训练
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:2.302879 train_acc:0.100433 test_acc: 0.100000
+
+train_acc-test_acc:0.000433
+
+=====
+weight初始化为相同值para=(torch.arange(-half_size,half_size,requires_grad=True)/1e7).reshape(m.weight.shape)
+bias全为1: 也训练出来了
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.378207 train_acc:0.859567 test_acc: 0.835200
+
+train_acc-test_acc:0.024367
+
+
+====
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=10, bias=True)
+)
+lambda of weight_decay:[0]
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.518093 train_acc:0.836050 test_acc: 0.777300
+
+train_acc-test_acc:0.058750
+

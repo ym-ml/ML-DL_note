@@ -1,0 +1,301 @@
+----
+不使用正则化
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:10 batch_size:256 lr:0.5
+train_loss:0.316433 train_acc:0.881850 test_acc: 0.857300
+
+
+------
+单独使用L2正则化
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.349581 train_acc:0.870783 test_acc: 0.862700
+lamb=1e-3
+
+------
+单独使用dropout
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.359523 train_acc:0.869833 test_acc: 0.838400
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.362013 train_acc:0.868400 test_acc: 0.834400
+------
+
+====
+混合权重衰减和暂退法
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:10 batch_size:256 lr:0.3
+train_loss:0.392728 train_acc:0.857200 test_acc: 0.858100
+
+
+=====20loops====
+混合
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.349104 train_acc:0.872650 test_acc: 0.859700
+
+只用L2
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.304799 train_acc:0.887483 test_acc: 0.863400
+
+只用dropout
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0, 0, 0, 0, 0, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.297414 train_acc:0.889567 test_acc: 0.873500
+
+
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0, 0, 0, 0, 0, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.247815 train_acc:0.906850 test_acc: 0.858400
+
+train_acc-test_acc:0.048450
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.309029 train_acc:0.885400 test_acc: 0.820800
+
+train_acc-test_acc:0.064600
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.305595 train_acc:0.886033 test_acc: 0.856400
+
+train_acc-test_acc:0.029633
+
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0, 0, 0, 0, 0, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.299083 train_acc:0.890467 test_acc: 0.869600
+
+train_acc-test_acc:0.020867
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.349902 train_acc:0.873333 test_acc: 0.849600
+
+train_acc-test_acc:0.023733
+
+结果:似乎是dropout更好一些.嗯,可能也是weight_decay的参数调的不好.
+混合两者似乎没有更好也没有更坏
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0.0001, 0, 0.0001, 0, 0.0001, 0]
+num_epochs:20 batch_size:256 lr:0.3
+train_loss:0.258495 train_acc:0.903400 test_acc: 0.864100
+
+train_acc-test_acc:0.039300
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Linear(in_features=256, out_features=256, bias=True)
+  (4): ReLU()
+  (5): Linear(in_features=256, out_features=10, bias=True)
+)
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.288412 train_acc:0.893417 test_acc: 0.835200
+
+train_acc-test_acc:0.058217
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0, 0, 0, 0, 0, 0]
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.265067 train_acc:0.900517 test_acc: 0.880100
+
+train_acc-test_acc:0.020417
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.333967 train_acc:0.878050 test_acc: 0.865400
+
+train_acc-test_acc:0.012650
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0.001, 0, 0.001, 0, 0.001, 0]
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.333448 train_acc:0.877083 test_acc: 0.863900
+
+train_acc-test_acc:0.013183
+
+Sequential(
+  (0): Flatten(start_dim=1, end_dim=-1)
+  (1): Linear(in_features=784, out_features=256, bias=True)
+  (2): ReLU()
+  (3): Dropout(p=0.3, inplace=False)
+  (4): Linear(in_features=256, out_features=256, bias=True)
+  (5): ReLU()
+  (6): Dropout(p=0.5, inplace=False)
+  (7): Linear(in_features=256, out_features=10, bias=True)
+)
+dropout1: 0.3  dropout2: 0.5
+lambda of weight_decay:[0, 0, 0, 0, 0, 0]
+num_epochs:30 batch_size:256 lr:0.3
+train_loss:0.261152 train_acc:0.902933 test_acc: 0.885900
+
+train_acc-test_acc:0.017033
+
+好吧,同时使用weight_decay和dropout缓解过拟合的效果要比单独使用某一个好一些.不过这会导致训练需要的轮数增加
