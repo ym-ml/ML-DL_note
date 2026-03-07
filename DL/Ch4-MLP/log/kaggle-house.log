@@ -375,3 +375,654 @@ Sequential(
 k折:5  num_epochs:250  learning_rate:6  batch_size:64  weight_decay:0.005
 5-折验证: 平均训练log rmse: 0.131331, 平均验证log rmse: 0.147517 
 
+
+Sequential(
+  (0): Linear(in_features=330, out_features=64, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=64, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.194725, 平均验证log rmse: 0.225198 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.103305, 平均验证log rmse: 0.153075 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.106343, 平均验证log rmse: 0.153651 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.102557, 平均验证log rmse: 0.153313 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.102633, 平均验证log rmse: 0.154115 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.1
+5-折验证: 平均训练log rmse: 0.154082, 平均验证log rmse: 0.156207 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.100222, 平均验证log rmse: 0.152664 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=256, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=256, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.128588, 平均验证log rmse: 0.172017 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.098858, 平均验证log rmse: 0.154424 
+
+
+Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.099754, 平均验证log rmse: 0.152820 
+
+
+block(
+  (final): Linear(in_features=2, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 6.637831, 平均验证log rmse: 6.638234 
+
+
+block(
+  (final): Linear(in_features=2, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 2.487312, 平均验证log rmse: 2.507760 
+
+
+block(
+  (final): Linear(in_features=3, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 12.030679, 平均验证log rmse: 12.030666 
+
+
+block(
+  (final): Linear(in_features=3, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 2.367020, 平均验证log rmse: 2.342992 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 2.433231, 平均验证log rmse: 2.346140 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=False)
+)
+k折:5  num_epochs:100  learning_rate:10  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 4.053552, 平均验证log rmse: 4.069764 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=False)
+)
+k折:5  num_epochs:200  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 3.918237, 平均验证log rmse: 3.888324 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=False)
+)
+k折:5  num_epochs:200  learning_rate:5  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 4.129983, 平均验证log rmse: 4.087596 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:5  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 2.182529, 平均验证log rmse: 2.183158 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=True)
+)
+(Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=128, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=128, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=4, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=4, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=16, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=16, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=16, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=16, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=32, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=32, out_features=1, bias=True)
+))k折:5  num_epochs:150  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 1.459817, 平均验证log rmse: 1.422182 
+
+
+block(
+  (final): Linear(in_features=10, out_features=1, bias=True)
+)
+(Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=64, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=64, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=64, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=64, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=8, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=8, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=512, bias=True)
+  (1): ReLU()
+  (2): Dropout(p=0.5, inplace=False)
+  (3): Linear(in_features=512, out_features=1, bias=True)
+))k折:5  num_epochs:250  learning_rate:7  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 1.076410, 平均验证log rmse: 1.080092 
+
+
+block(
+  (final): Linear(in_features=5, out_features=1, bias=True)
+)
+(Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+), Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+))k折:5  num_epochs:200  learning_rate:6  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 1.636924, 平均验证log rmse: 1.644861 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+  )
+)
+ModuleList(
+  (0-4): 5 x Sequential(
+    (0): Linear(in_features=330, out_features=1, bias=True)
+  )
+)k折:5  num_epochs:200  learning_rate:6  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 0.137111, 平均验证log rmse: 0.150207 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (6): Sequential(
+      (0): Linear(in_features=330, out_features=256, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=256, out_features=1, bias=True)
+    )
+    (7-8): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=512, out_features=1, bias=True)
+    )
+  )
+)
+k折:5  num_epochs:200  learning_rate:6  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 0.152704, 平均验证log rmse: 0.163730 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (6): Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+    (7-8): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+  )
+)
+k折:5  num_epochs:100  learning_rate:1  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 0.104754, 平均验证log rmse: 0.156767 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (6-7): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=512, out_features=1, bias=True)
+    )
+    (8): Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+  )
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0
+5-折验证: 平均训练log rmse: 0.109452, 平均验证log rmse: 0.147738 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5): Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (6): Sequential(
+      (0): Linear(in_features=330, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=512, out_features=1, bias=True)
+    )
+    (7): Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+    (8): Sequential(
+      (0): Linear(in_features=330, out_features=512, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=512, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Linear(in_features=10, out_features=1, bias=True)
+)
+k折:5  num_epochs:100  learning_rate:0.1  batch_size:64  weight_decay:0.001
+5-折验证: 平均训练log rmse: 0.075035, 平均验证log rmse: 0.145779 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5-6): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (7): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (8-9): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Dropout(p=0.2, inplace=False)
+    (1): Linear(in_features=10, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:150  learning_rate:0.1  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.270055, 平均验证log rmse: 0.236665 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5-6): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (7): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (8-9): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=10, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:150  learning_rate:0.1  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.127191, 平均验证log rmse: 0.136537 
+
+
+block(
+  (nets): ModuleList(
+    (0-4): 5 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (5-6): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (7): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (8-9): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.5, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=10, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:150  learning_rate:0.08  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.076210, 平均验证log rmse: 0.140065 
+
+
+block(
+  (nets): ModuleList(
+    (0-5): 6 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (6-7): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (8): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=10, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:150  learning_rate:0.08  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.077262, 平均验证log rmse: 0.138462 
+
+
+block(
+  (nets): ModuleList(
+    (0-5): 6 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (6-7): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (8): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (9): Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=10, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:200  learning_rate:0.08  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.068964, 平均验证log rmse: 0.142011 
+
+
+block(
+  (nets): ModuleList(
+    (0-7): 8 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (8-9): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (10): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (11-13): 3 x Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=14, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:200  learning_rate:0.05  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.074564, 平均验证log rmse: 0.138031 
+
+
+block(
+  (nets): ModuleList(
+    (0-7): 8 x Sequential(
+      (0): Linear(in_features=330, out_features=1, bias=True)
+    )
+    (8-9): 2 x Sequential(
+      (0): Linear(in_features=330, out_features=32, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=32, out_features=1, bias=True)
+    )
+    (10): Sequential(
+      (0): Linear(in_features=330, out_features=128, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=128, out_features=1, bias=True)
+    )
+    (11-13): 3 x Sequential(
+      (0): Linear(in_features=330, out_features=64, bias=True)
+      (1): ReLU()
+      (2): Dropout(p=0.6, inplace=False)
+      (3): Linear(in_features=64, out_features=1, bias=True)
+    )
+  )
+  (final): Sequential(
+    (0): Linear(in_features=14, out_features=1, bias=True)
+  )
+)
+k折:5  num_epochs:200  learning_rate:0.05  batch_size:64  weight_decay:0.01
+5-折验证: 平均训练log rmse: 0.074761, 平均验证log rmse: 0.136357 
+
