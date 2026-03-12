@@ -1026,3 +1026,10 @@ block(
 k折:5  num_epochs:200  learning_rate:0.05  batch_size:64  weight_decay:0.01
 5-折验证: 平均训练log rmse: 0.074761, 平均验证log rmse: 0.136357 
 
+
+Sequential(
+  (0): Linear(in_features=330, out_features=1, bias=True)
+)
+k折:5  num_epochs:250  learning_rate:6  batch_size:64  weight_decay:0.005
+5-折验证: 平均训练log rmse: 0.131430, 平均验证log rmse: 0.147505 
+
