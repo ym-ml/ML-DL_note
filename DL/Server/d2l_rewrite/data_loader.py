@@ -2,7 +2,7 @@ import torch
 import torchvision
 from torchvision import transforms
 
-def load_data_fashion_mnist(batch_size, resize=None):
+def load_data_fashion_mnist_gpu(batch_size, resize=None):
     """Download the Fashion-MNIST dataset and then load it into memory.
 
     Defined in :numref:`sec_utils`"""
