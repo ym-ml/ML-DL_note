@@ -674,22 +674,27 @@ class TimeMachine(d2l.DataModule):
             self.num_train, self.num_train + self.num_val)
         return self.get_tensorloader([self.X, self.Y], train, idx)
 
-class Vocab:
-    """Vocabulary for text."""
-    def __init__(self, tokens=[], min_freq=0, reserved_tokens=[]):
-        """Defined in :numref:`sec_text-sequence`"""
-        # Flatten a 2D list if needed
-        if tokens and isinstance(tokens[0], list):
-            tokens = [token for line in tokens for token in line]
-        # Count token frequencies
-        counter = collections.Counter(tokens)
-        self.token_freqs = sorted(counter.items(), key=lambda x: x[1],
-                                  reverse=True)
-        # The list of unique tokens
-        self.idx_to_token = list(sorted(set(['<unk>'] + reserved_tokens + [
-            token for token, freq in self.token_freqs if freq >= min_freq])))
+class Vocab:  #@save
+    """文本词表"""
+    def __init__(self, tokens=None, min_freq=0, reserved_tokens=None):
+        if tokens is None:
+            tokens = []
+        if reserved_tokens is None:
+            reserved_tokens = []
+        # 按出现频率排序
+        counter = count_corpus(tokens)
+        self._token_freqs = sorted(counter.items(), key=lambda x: x[1],
+                                   reverse=True)  #counter.items():要排序的对象  reverse:降序
+        # 未知词元的索引为0
+        self.idx_to_token = ['<unk>'] + reserved_tokens
         self.token_to_idx = {token: idx
                              for idx, token in enumerate(self.idx_to_token)}
+        for token, freq in self._token_freqs:
+            if freq < min_freq:
+                break
+            if token not in self.token_to_idx:
+                self.idx_to_token.append(token)
+                self.token_to_idx[token] = len(self.idx_to_token) - 1
 
     def __len__(self):
         return len(self.idx_to_token)
@@ -700,14 +705,26 @@ class Vocab:
         return [self.__getitem__(token) for token in tokens]
 
     def to_tokens(self, indices):
-        if hasattr(indices, '__len__') and len(indices) > 1:
-            return [self.idx_to_token[int(index)] for index in indices]
-        return self.idx_to_token[indices]
+        if not isinstance(indices, (list, tuple)):
+            return self.idx_to_token[indices]
+        return [self.idx_to_token[index] for index in indices]
 
     @property
-    def unk(self):  # Index for the unknown token
-        return self.token_to_idx['<unk>']
+    def unk(self):  # 未知词元的索引为0
+        return 0
 
+    @property
+    def token_freqs(self):
+        return self._token_freqs
+
+def count_corpus(tokens):  #@save
+    """统计词元的频率"""
+    # 这里的tokens是1D列表或2D列表
+    if len(tokens) == 0 or isinstance(tokens[0], list):
+        # 将词元列表展平成一个列表
+        tokens = [token for line in tokens for token in line]
+    return collections.Counter(tokens)
+    
 class RNNScratch(d2l.Module):
     """The RNN model implemented from scratch.
 
@@ -3519,6 +3536,14 @@ def evaluate_accuracy(net, data_iter):  #@save
 #class Accumulator:
 #class Animator:
 #from Ipython import display
+
+DATA_HUB['time_machine'] = (DATA_URL + 'timemachine.txt',
+                            '090b5e7e70c295757f55df93cb0a180b9691891a')
+def read_time_machine():  #@save
+    """将时间机器数据集加载到文本行的列表中"""
+    with open(d2l.download('time_machine'), 'r') as f:
+        lines = f.readlines()
+    return [re.sub('[^A-Za-z]+', ' ', line).strip().lower() for line in lines]
 
 
 
